@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/layout-main}">
+<head>
+    <title>StayEase - Your Stay, Simplified</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: url('/img/hotel3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url('/img/floating-icons.png'); /* optional icon pattern */
+            background-repeat: repeat;
+            background-size: 200px;
+            opacity: 0.05;
+            animation: scrollBG 60s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes scrollBG {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .circle-card {
+            background: linear-gradient(135deg, #ffffff, #f0f2f5);
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.3s ease forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid #ddd;
+            position: relative;
+            z-index: 1;
+        }
+
+        .circle-card h1 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .circle-card p {
+            font-size: 1rem;
+            color: #34495e;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-custom {
+            background-color: #00b894;
+            border: none;
+            font-size: 1.1rem;
+            padding: 10px 25px;
+            border-radius: 30px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #019875;
+        }
+
+        @media (max-width: 576px) {
+            .circle-card {
+                width: 100%;
+                height: auto;
+                border-radius: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="floating-icons"></div>
+
+<th:block layout:fragment="content">
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="circle-card">
+            <h1>✈️ Your journey begins with the perfect stay.</h1>
+            <p>Find peace of mind before you even check in.</p>
+            <a href="/login" class="btn btn-custom">Explore - Dream - Discover</a>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>
