@@ -1,4 +1,4 @@
-# StayEase – HotelBookingApp
+# StayEase – Hotel Booking App
 
 `StayEase` is a modern web application designed to simplify hotel reservations for customers and hotel managers. Built with Java & Spring Boot in the backend and Thymeleaf in the frontend, it follows the MVC architecture for a clean and maintainable design.
 
